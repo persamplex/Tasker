@@ -1,11 +1,25 @@
 import time
 import inspect
 import sys
-from colorama import Fore, Style
-from cachetools import TTLCache
+import importlib
+import subprocess
 from datetime import datetime, timedelta
 import os
+#--------------------
 
+def install_and_import(package):
+    try:
+        importlib.import_module(package)
+    except ImportError:
+        subprocess.check_call(["python", "-m", "pip", "install", package])
+    finally:
+        globals()[package] = importlib.import_module(package)
+
+install_and_import('cachetools')
+install_and_import('colorama')
+from colorama import Fore, Style
+from cachetools import TTLCache
+#---------------
 def format_time(seconds):
     if seconds < 1e-6:
         return f"{seconds * 1e9:.2f} ns" 
