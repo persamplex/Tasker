@@ -39,26 +39,26 @@ def get_data(key):
     return cache.get(key)
 
 
-class t:    
-    def filename(option=False):
-        if option is True:
+class t:
+    def config(timer=False,filename=False):
+        if filename is True:
             save_data("filename", True)
         else:
-            save_data("filename", ' ')
-    
-    def timer(option=False):
-        if option is True:
+            save_data("filename", None)
+        if timer is True:
             start_time = time.time()
             save_data("start", start_time)
         else:
             save_data("start",None)
+        
+    
 
-    def print(code=3 , message='None', function_name=None):
+    def print( message='None',code=1 , function_name=None):
         """
     ## t.print
     - print for you somthing with 4 code option
         - **0** = Start Code! use it when you start Somthing
-        - **1** = Down Code! use it when you got some data or down tasks
+        - **1** = Down Code! use it when down tasks
         - **2** = Error Code! For Just Showing Errors
             - .. note:: Error Code Most Run in Exceptions
         - **3** = Info Code! For showing somthing like stdout 
@@ -79,10 +79,19 @@ class t:
 
         error_line = str(get_error_line() if code not in {0, 1, 3} else caller_line)
         outer_frames = inspect.getouterframes(caller_frame)
-        if len(outer_frames) > 1:
-            outer_frame = outer_frames[1]
+     
+
+        if outer_frames is not None:
+            outer_frame = outer_frames[0]
             function = outer_frame[3]
             function = "MainModule" if function == "<module>" else function
+
+            if get_data('filename') == True:
+                outer_frame = outer_frames[0]
+                filename = os.path.basename(outer_frame[1])
+                save_data('filename',f' {filename}')
+            else : 
+                save_data('filename','')
             if function_name is not None :
                 if code == 0:
                     function = function_name
@@ -92,11 +101,8 @@ class t:
                     function = Fore.RED + function_name + Style.RESET_ALL
                 if code == 3:
                     function = Fore.GREEN + function_name + Style.RESET_ALL
-            if get_data('filename') is True:
-                filename = os.path.basename(outer_frame[1])
-                save_data('filename',f'{filename}')
-            else : 
-                save_data('filename','')
+
+
         else:
             function = "MainModule"
             
@@ -107,15 +113,11 @@ class t:
         else:
             counter = ""
             
-        if get_data('filename') == None or get_data('filename') == ' ':
-            filename_output = ''
-        else:
-            filename_output = get_data('filename')
-        
+        tag = ''
         if code == 0:
             tag = f'[{"S"}]'
         elif code == 1:
-            tag = f'[{"D"}]'
+            tag = Fore.BLUE + f'[{"D"}]' + Style.RESET_ALL
         elif code == 2:
             tag = Fore.RED + Style.BRIGHT + f'[{"E"}]'
         elif code == 3:
@@ -124,7 +126,7 @@ class t:
         print(
             f"[{error_line:^3}]"
             + Style.RESET_ALL
-            + f"[ {filename_output} {function:^10} ]"
+            + f"[{get_data('filename')} {function:^10} ]"
             + f"{tag}"
             + f"{counter}: {message} {Style.RESET_ALL}"
         )
