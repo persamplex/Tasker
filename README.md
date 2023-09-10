@@ -2,7 +2,7 @@
   <img src="https://s6.uupload.ir/files/black_amp_white_minimalist_business_logo_knwj.png" alt="Logo">
 </p>
 
-## Documentation
+## About
 Tasker.py is a Python module that helps developers with logging and timing their code. It provides utility functions for package installation and importing, time formatting, and caching, as well as a customizable print function with different code options. The module also includes a t class for configuring timer and filename options, making it easier to log code execution and time tasks
 
 ## Installation
