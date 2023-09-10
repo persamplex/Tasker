@@ -39,6 +39,15 @@ t.print(message='error',code=2)
 Code 2 is for error outputs. Use this code when you encounter an error.
 
 **note*: Code range is from 0 to 3.
+This method prints a formatted message with additional information based on the provided code:
+
+  -0: Start Code, used when starting something
+  
+  -1: Down Code, used when completing tasks
+  
+  -2: Error Code, used for showing errors (should be used in exceptions)
+  
+  -3: Info Code, used for showing information like stdout
 
 #### **Print With optional function name:**
 ```python
@@ -47,6 +56,7 @@ t.print(message='test',function_name='My Function Name')
 ![Output](https://s6.uupload.ir/files/capture_qimg.png)
 
 As you can see, the MainModule changes to **My Function Name**. It's as if your code ran inside a function named "My Function Name".
+The function_name parameter can be used to override the automatically detected function name.
 
 ### t.config
 Currently, there are two configuration options available.
