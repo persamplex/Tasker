@@ -4,7 +4,7 @@
 
 
 
-
+$$\mathscr { code \ Logger}$$
 
 
 ## About
@@ -31,7 +31,9 @@ Here are some examples for your reference.
 ```python
 t.print(message='hi')
 ```
-![Output](https://s6.uupload.ir/files/capture_mxu.png)
+#### output
+- $\textbf {\color {white}{[ 2 ][ MainModule ]} \color {blue}{[D]} \color {white}{: hi }}$
+
 
 The number 2 is the line number. If you don't provide any code option, the D tag will be used in the output. The MainModule is the name of the function that ran your code.
 
@@ -39,7 +41,8 @@ The number 2 is the line number. If you don't provide any code option, the D tag
 ```python
 t.print(message='error',code=2)
 ```
-![Output](https://s6.uupload.ir/files/capture_2exe.png)
+#### output
+- $\textbf  {\color {white}{[ 2 ][ MainModule ]} \color{red}{[E]: error }}$
 
 Code 2 is for error outputs. Use this code when you encounter an error.
 
@@ -58,7 +61,8 @@ This method prints a formatted message with additional information based on the 
 ```python
 t.print(message='test',function_name='My Function Name')
 ```
-![Output](https://s6.uupload.ir/files/capture_qimg.png)
+#### output
+- $\textbf {\color {white}{[ 2 ][ My Function Name ]} \color {blue}{[D]} \color {white}{: test }}$
 
 As you can see, the MainModule changes to **My Function Name**. It's as if your code ran inside a function named "My Function Name".
 The function_name parameter can be used to override the automatically detected function name.
@@ -71,7 +75,9 @@ Currently, there are two configuration options available.
 t.config(filename=True)
 t.print(message='test')
 ```
-![Output](https://s6.uupload.ir/files/capture_m4s.png)
+
+#### output
+- $\textbf {\color {white}{[ 3 ][ test-name-file.py MainModule ]} \color {blue}{[D]} \color {white}{: test }}$
 
 Now, the output includes the name of your Python file at the beginning.
 
@@ -80,9 +86,12 @@ Now, the output includes the name of your Python file at the beginning.
 t.config(timer=True)
 t.print(message='test')
 ```
-![Output](https://s6.uupload.ir/files/capture_5aq0.png)
+
+#### output
+- $\textbf {\color {white}{[ 3 ][ MainModule ]} \color {blue}{[D]} \color {white}{[17.01 ms]: test }}$
 
 With this configuration, you can see the time taken for your code to execute the t.print(s) command.
+
 
 ## Another example
 ```python
@@ -103,4 +112,18 @@ With this configuration, you can see the time taken for your code to execute the
 ```
 ### output 
 
-![Output](https://s6.uupload.ir/files/capture_6y3c.png)
+
+- $\textbf  {\color{white}{[12 ][ MainModule ][S][17.00 ms]: my code is start}}$
+
+
+- $\textbf  {\color {white}{[ 5 ][  my\\_func   ][S][18.00 ms]: start my-func}}$
+
+
+- $\textbf  {\color {white}{[ 7 ][  my\\_func   ]} \color{red}{[E][18.00 ms]: division by zero }}$
+
+
+- $\textbf  {\color {white}{[14 ][ MainModule ]} \color{blue}{[D]} \color {white}{[19.00 ms]: my code is down }}$
+
+
+
+
