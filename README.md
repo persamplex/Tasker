@@ -2,7 +2,7 @@
   <img src="https://s6.uupload.ir/files/black_amp_white_minimalist_business_logo_knwj.png" alt="Logo">
 </p>
 
-$$$${\color{red}Red}$$$$
+
 
 
 
