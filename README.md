@@ -1,21 +1,28 @@
 
+## Installation
+
+To install, download the Tasker.py file and import it into your project folder.
+```python
+  from Tasker import t
+```
+**note** : Ensure that your project file and Tasker.py are in the same folder.
+
 ## Usage
-First import the Tasker
+First, import the Tasker module:
 ```python
 from Tasker import t
 ```
-now you can use tasker in your project.
+Now, you can use Tasker in your project.
 
 ### t.print
-here is the examples for you.
+Here are some examples for your reference.
 #### **Simple Print:**
 ```python
 t.print(message='hi')
 ```
 ![Output](https://s6.uupload.ir/files/capture_mxu.png)
 
-the number 2 is the line Number! if you dont give any code option, we use **D** TAG in output.
-and the MainModule is the name that function Ran your code
+The number 2 is the line number. If you don't provide any code option, the D tag will be used in the output. The MainModule is the name of the function that ran your code.
 
 #### **Print With code:**
 ```python
@@ -23,9 +30,9 @@ t.print(message='error',code=2)
 ```
 ![Output](https://s6.uupload.ir/files/capture_2exe.png)
 
-The code 2 is for Error outputs, my main is use this code, when you think got an Error.
+Code 2 is for error outputs. Use this code when you encounter an error.
 
-**note*: Code Range = 0 to 3
+**note*: Code range is from 0 to 3.
 
 #### **Print With optional function name:**
 ```python
@@ -33,10 +40,10 @@ t.print(message='test',function_name='My Function Name')
 ```
 ![Output](https://s6.uupload.ir/files/capture_qimg.png)
 
-as you think the MainModule change to the **My Function Name**! its like my code ran in some function with the name My Function Name.
+As you can see, the MainModule changes to **My Function Name**. It's as if your code ran inside a function named "My Function Name".
 
 ### t.config
-for now we have just 2 option for config
+Currently, there are two configuration options available.
 
 #### **filename**
 ```python
@@ -45,7 +52,7 @@ t.print(message='test')
 ```
 ![Output](https://s6.uupload.ir/files/capture_m4s.png)
 
-now we have the our file python code name on the first of the outputs
+Now, the output includes the name of your Python file at the beginning.
 
 #### **timer**
 ```python
@@ -54,4 +61,4 @@ t.print(message='test')
 ```
 ![Output](https://s6.uupload.ir/files/capture_5aq0.png)
 
-now you can see how much time speend for your code to get the t.print command
+With this configuration, you can see the time taken for your code to execute the t.print(s) command.
