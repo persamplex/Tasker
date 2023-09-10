@@ -62,3 +62,24 @@ t.print(message='test')
 ![Output](https://s6.uupload.ir/files/capture_5aq0.png)
 
 With this configuration, you can see the time taken for your code to execute the t.print(s) command.
+
+## Another example
+```python
+1 from Tasker import t
+2 t.config(timer=True)
+3
+4 def my_func():
+5    t.print('start my-func',0)
+6    try:
+7       some_error = 10/0
+8    except Exception as e :
+9       t.print(e,2)
+10    
+11 if __name__ == '__main__':
+12     t.print('my code is start',0)
+13     my_func()
+14     t.print('my code is down',1)
+```
+### output 
+
+![Output](https://s6.uupload.ir/files/capture_6y3c.png)
